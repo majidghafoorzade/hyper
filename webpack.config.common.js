@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = (env) => {
   return {
     mode: 'production',
-    entry: `./src/${env}/index.ts`,
+    entry: `./src/entry.${env}.tsx`,
     target: env === 'server' ? 'node' : 'web',
     output: {
       path: path.resolve(__dirname, `build/${env}`),
