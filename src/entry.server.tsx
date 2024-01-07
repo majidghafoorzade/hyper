@@ -9,13 +9,19 @@ const PORT = parseInt(process.env.APP_PORT ?? "3000");
 // Create Express server
 const app = express();
 
+// Config static files directories
+app.use(express.static("public"));
+app.use("/static", express.static("build/client"));
+
 // Configure template engine
 app.set("view engine", "hbs");
-app.set("views", "./src/server/views");
+app.set("views", "./src/templates");
 
 // Create wildcard route
 app.get("*", async function (req: Request, res: Response) {
-  const { markup } = await renderApp();
+  const { markup } = await renderApp({
+    url: req.url,
+  });
 
   return res.render("application.hbs", {
     markup,
