@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "jsxImportSource": "preact",
+    "baseUrl": "src",
+    "paths": {
+      "react": ["./node_modules/preact/compat/"],
+      "react-dom": ["./node_modules/preact/compat/"]
+    }
+  },
+  "include": ["src"]
+}
